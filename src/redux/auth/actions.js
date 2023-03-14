@@ -12,16 +12,20 @@ export function Login(email) {
       if (res) {
         const Token = await magic.user.getIdToken();
         const userMetaData = await magic.user.getMetadata();
+        localStorage.setItem("token",Token)
+        localStorage.setItem("user",JSON.stringify(userMetaData))
         dispatch({
           type : AUTH_CONSTANSTS.AUTH_SUCCESS,
           payload:{ Token, userMetaData}
         })
+        return true
       }
     } catch (error) {
       dispatch({
         type: AUTH_CONSTANSTS.AUTH_ERROR,
         payload :error
       })
+      return false
     }
   };
 }

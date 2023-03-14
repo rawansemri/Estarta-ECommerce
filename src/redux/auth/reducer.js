@@ -1,10 +1,10 @@
 import * as AUTH_CONSTANSTS from "./constants";
 
 const initState = {
-  isAuth: false,
+  isAuth: !!localStorage.getItem('token') || false,
   token: null,
   loading: false,
-  user: {},
+  user: JSON.parse(localStorage.getItem('user')) || {},
   error: null,
 };
 
