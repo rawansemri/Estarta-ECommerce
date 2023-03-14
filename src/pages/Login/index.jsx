@@ -13,7 +13,7 @@ export const LoginPage = () => {
     dispatch(Login(email));
   }
   useEffect(() => {
-    if (isAuth) navigate("/");
+    if (isAuth) navigate("/products");
   }, [isAuth]);
   return (
     <div className={styles.loginContainer}>
