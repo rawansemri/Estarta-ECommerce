@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import {lazy, Suspense} from 'react'
-import { Login } from "./pages/Login";
+import { LoginPage } from "./pages/Login";
 import { Home } from "./pages/Home";
 import { Products } from "./pages/Products";
 import { Cart } from "./pages/Cart";
@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route index element={<Home/>} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={<LoginPage/>} />
         <Route path="/products" element={<Products/>} />
         <Route path="/carts" element={<Cart/>} />
         <Route path="*" element={<NotFound/>} />
