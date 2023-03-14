@@ -6,10 +6,10 @@ import { AiOutlineUser } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "../../redux/auth/actions";
 
+
 export const Navbar = () => {
   const { isAuth, user } = useSelector((state) => state.authReducer);
   const nav = useNavigate();
-  console.log(isAuth)
   const [isUserOpened, setIsUserOpened] = useState(false);
   const dispatch = useDispatch();
 
@@ -20,7 +20,7 @@ export const Navbar = () => {
         }
       });
   }
-  
+
   return (
     <nav>
       <Link to="/" className={styles.logo}>

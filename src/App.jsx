@@ -6,14 +6,16 @@ import { Products } from "./pages/Products";
 import { Cart } from "./pages/Cart";
 import { NotFound } from "./pages/NotFound";
 import { Navbar } from "./components/Navbar";
-
+import { useSelector } from "react-redux";
+import { Spinner } from './components/Spinner'
 // const Home = lazy(() => import("./pages/Home"));
 // const Cart = lazy(() => import("./pages/Cart"));
 // const Products = lazy(() => import("./pages/Products"));
 // const NotFound = lazy(() => import("./pages/NotFound"));
 // const LoginPage = lazy(() => import("./pages/Login"));
 function App() {
-
+const {loading} = useSelector(state=>state.authReducer)
+if(loading) return (<Spinner />)
   return (
   
     <div className="App">
