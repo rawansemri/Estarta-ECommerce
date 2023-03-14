@@ -6,6 +6,12 @@ import { Products } from "./pages/Products";
 import { Cart } from "./pages/Cart";
 import { NotFound } from "./pages/NotFound";
 import { Navbar } from "./components/Navbar";
+
+// const Home = lazy(() => import("./pages/Home"));
+// const Cart = lazy(() => import("./pages/Cart"));
+// const Products = lazy(() => import("./pages/Products"));
+// const NotFound = lazy(() => import("./pages/NotFound"));
+// const LoginPage = lazy(() => import("./pages/Login"));
 function App() {
 
   return (

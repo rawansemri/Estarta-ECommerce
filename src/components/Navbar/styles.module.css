@@ -19,3 +19,21 @@ nav {
     color: white;
     text-decoration: none;
   }
+
+  .logoutBox{
+    position: absolute;
+    right: -4px;
+    background: #535252;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 13px;
+
+  }
+  .logoutContainer{
+    position: relative;
+    cursor: pointer;
+  }
+  .logoutText:hover {
+    text-decoration: underline;
+    }
