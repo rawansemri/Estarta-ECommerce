@@ -28,11 +28,11 @@ export const Navbar = () => {
           Estarta E-commerce
         </Link>
       )}
-      :
-      {
+    
+      {isAuth && (
         <Link to="/products" className={styles.logo}>
           Estarta E-commerce
-        </Link>
+        </Link>)
       }
       {!isAuth && (
         <div>
