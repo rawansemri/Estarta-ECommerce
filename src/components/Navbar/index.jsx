@@ -23,12 +23,19 @@ export const Navbar = () => {
 
   return (
     <nav>
-       <Link to="/" className={styles.logo}>
-            Estarta E-commerce
-          </Link>
+      {!isAuth && (
+        <Link to="/" className={styles.logo}>
+          Estarta E-commerce
+        </Link>
+      )}
+      :
+      {
+        <Link to="/products" className={styles.logo}>
+          Estarta E-commerce
+        </Link>
+      }
       {!isAuth && (
         <div>
-         
           <Link to="/login">
             <button className={styles.loginBtn}>
               Login <BsArrowRightShort size={20} />
@@ -36,35 +43,35 @@ export const Navbar = () => {
           </Link>
         </div>
       )}
-
       {isAuth && (
         <>
-        <div className={styles.logoutContainer}>
-          <div className={styles.navLinks}>
-            <div className={styles.productsNav}>
-              <NavLink to="/products">Products</NavLink>
+          <div className={styles.logoutContainer}>
+            <div className={styles.navLinks}>
+              <div className={styles.productsNav}>
+                <NavLink to="/products">Products</NavLink>
+              </div>
+              <Link to="/carts" className={styles.cartIcon}>
+                <div className={styles.cartCount}>{cartItems?.length}</div>
+                <BsCart4 size={25} />
+              </Link>
             </div>
-            <Link to="/carts" className={styles.cartIcon}>
-              <div className={styles.cartCount}>{cartItems?.length}</div>
-              <BsCart4 size={25} />
-            </Link>
+            <button
+              className={styles.userBtn}
+              onClick={() => setIsUserOpened(!isUserOpened)}
+            >
+              <AiOutlineUser size={20} />
+            </button>
+            {isUserOpened && (
+              <div className={styles.logoutBox}>
+                {user?.email}
+                <a className={styles.logoutText} onClick={handleLogout}>
+                  Logout
+                </a>
+              </div>
+            )}
           </div>
-          <button
-            className={styles.userBtn}
-            onClick={() => setIsUserOpened(!isUserOpened)}
-          >
-            <AiOutlineUser size={20} />
-          </button>
-          {isUserOpened && (
-            <div className={styles.logoutBox}>
-              {user?.email}
-              <a className={styles.logoutText} onClick={handleLogout}>
-                Logout
-              </a>
-            </div>
-          )}
-        </div>
-      </>)}
+        </>
+      )}
     </nav>
   );
 };
