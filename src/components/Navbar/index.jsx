@@ -23,11 +23,12 @@ export const Navbar = () => {
 
   return (
     <nav>
-      {!isAuth && (
-        <div>
-          <Link to="/" className={styles.logo}>
+       <Link to="/" className={styles.logo}>
             Estarta E-commerce
           </Link>
+      {!isAuth && (
+        <div>
+         
           <Link to="/login">
             <button className={styles.loginBtn}>
               Login <BsArrowRightShort size={20} />
@@ -38,9 +39,6 @@ export const Navbar = () => {
 
       {isAuth && (
         <>
-        <Link to="/products" className={styles.logo}>
-        Estarta E-commerce
-      </Link>
         <div className={styles.logoutContainer}>
           <div className={styles.navLinks}>
             <div className={styles.productsNav}>
