@@ -1,0 +1,48 @@
+.itemsContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+    padding: 2rem 0;
+    row-gap:30px;
+    text-align: center;
+}
+.item{
+    display: flex;
+    gap: 10px;
+    justify-content:flex-start;
+    border: 1px solid white;
+    border-radius: 8px;
+    font-size: x-large;
+}
+.itemImage{
+    border-radius: 8px;
+}
+
+.itemDesc{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.quantityContainer {
+    display: flex;
+    align-items: center;
+}
+.quantityContainer button {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+}
+.quantity {
+    padding: 1rem;
+    border-radius: 14px;
+    width: 70px;
+    text-align: center;
+    outline: none;
+    height: 4px;
+}

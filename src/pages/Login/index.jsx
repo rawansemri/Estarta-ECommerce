@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Login } from '../../redux/auth/actions'
 import { useDispatch, useSelector  } from "react-redux";
 import { useNavigate } from "react-router-dom";
-export const LoginPage = () => {
+const LoginPage = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -25,3 +25,5 @@ export const LoginPage = () => {
   </div>
 );
 }
+
+export default LoginPage;

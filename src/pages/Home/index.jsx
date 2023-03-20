@@ -1,9 +1,9 @@
 import React from "react";
 import { BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className={styles.divHome}>
       <h1>Welcome to Estarta-ECommerce</h1>
@@ -16,3 +16,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

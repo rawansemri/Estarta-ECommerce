@@ -1,4 +1,4 @@
-import * as AUTH_CONSTANSTS from "./constants";
+import * as AUTH_CONSTANTS from "./constants";
 
 const initState = {
   isAuth: !!localStorage.getItem('token') || false,
@@ -10,18 +10,18 @@ const initState = {
 
 function authReducer(state = initState, action) {
   switch (action.type) {
-    case AUTH_CONSTANSTS.AUTH_LOADING:
+    case AUTH_CONSTANTS.AUTH_LOADING:
       return {
         ...state,
         loading: true,
       };
-    case AUTH_CONSTANSTS.AUTH_ERROR:
+    case AUTH_CONSTANTS.AUTH_ERROR:
       return {
         ...state,
         loading: false,
         error: action.payload,
       };
-    case AUTH_CONSTANSTS.AUTH_SUCCESS:
+    case AUTH_CONSTANTS.AUTH_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -29,7 +29,7 @@ function authReducer(state = initState, action) {
         user: action.payload.userMetaData,
         token: action.payload.Token,
       };
-    case AUTH_CONSTANSTS.CLEAR:
+    case AUTH_CONSTANTS.CLEAR:
       return {
         token: "",
         isAuth: false,
@@ -37,7 +37,7 @@ function authReducer(state = initState, action) {
         loading: false,
         error: null,
       };
-    case AUTH_CONSTANSTS.RESET_LOADING:
+    case AUTH_CONSTANTS.RESET_LOADING:
       return {
         ...state,
         loading: false,

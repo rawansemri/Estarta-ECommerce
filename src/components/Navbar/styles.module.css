@@ -1,39 +1,77 @@
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border-bottom: 2px solid #eee;
-    padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid #eee;
+  padding: 10px 0px;
+}
+.loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
 
-  }
-  .loginBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:5px;
-    text-decoration: none;
-  }
+.logo {
+  color: white;
+  text-decoration: none;
+}
 
-  .logo {
-    color: white;
-    text-decoration: none;
-  }
+.logoutBox {
+  position: absolute;
+  right: 10%;
+  top:12%;
+  background: #535252;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 13px;
+}
 
-  .logoutBox{
-    position: absolute;
-    right: -4px;
-    background: #535252;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border-radius: 13px;
+.logoutContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+.logoutText:hover {
+  text-decoration: underline;
+}
+.navLinks {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
 
-  }
-  .logoutContainer{
-    position: relative;
-    cursor: pointer;
-  }
-  .logoutText:hover {
-    text-decoration: underline;
-    }
+}
+
+.navLinks a{
+  color: white;
+  text-decoration: none;
+}
+.navLinks .productsNav a .active {
+  text-decoration:underline;
+}
+
+.logoutContainer .userBtn{
+  position:relative
+}
+
+.cartCount{ 
+  display: flex;
+  position: absolute;
+  top: -15px;
+  right: -10px; 
+  background: #5b595a;
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 50%;
+}
+
+.cartIcon{
+  position: relative;
+}
