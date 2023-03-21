@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    color: #2F3C7E;
 }
 .loginBtn {
     display: flex;
@@ -14,7 +15,7 @@
 .loginContainer input {
     width: 300px;
     height: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid #2F3C7E;
     border-radius: 5px;
     padding: 0 10px;
     margin: 10px 0;

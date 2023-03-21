@@ -17,6 +17,7 @@ const LoginPage = () => {
   }, [isAuth]);
   return (
     <div className={styles.loginContainer}>
+      <h1>Login</h1>
     <input type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)}/>
 
     <button disabled={loading} className={styles.loginBtn} onClick={handleLogin} >

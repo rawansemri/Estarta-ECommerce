@@ -4,6 +4,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 2rem 0;
+    gap: 10px;
 
 }
 .product{
@@ -12,6 +13,11 @@
     gap: 10px;
     text-align: center;
     justify-content: space-between;
+    color: black;
+    background-color: #c9bebe;
+    border: 2px solid #2F3C7E;
+    padding: 10px;
+    border-radius: 12px;
 }
 .productImage{
     border-radius: 8px;

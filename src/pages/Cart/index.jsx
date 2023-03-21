@@ -31,7 +31,7 @@ const Cart = () => {
             <img className={styles.itemImage} src={item.image_link} />
             <div className={styles.itemDesc}>
               <div> {item.name} </div>
-              <div> {item.price} $ </div>
+              <div>$ {item.price} </div>
               <div className={styles.quantityContainer}>
                 <button onClick={() => handleRemoveFromCart(item)}>-</button>
                 <input

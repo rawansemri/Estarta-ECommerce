@@ -3,7 +3,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid #2F3C7E;
   padding: 10px 0px;
 }
 .loginBtn {
@@ -15,15 +15,17 @@ nav {
 }
 
 .logo {
-  color: white;
+  color: #2F3C7E;
   text-decoration: none;
+  font-size: x-large;
+  font-weight: bold;
 }
 
 .logoutBox {
   position: absolute;
   right: 10%;
   top:12%;
-  background: #535252;
+  background: #998e8e;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -46,8 +48,9 @@ nav {
 }
 
 .navLinks a{
-  color: white;
-  text-decoration: none;
+  color: #2F3C7E;
+  text-decoration:none;
+  font-weight: bold;
 }
 .navLinks .productsNav a .active {
   text-decoration:underline;
@@ -62,7 +65,7 @@ nav {
   position: absolute;
   top: -15px;
   right: -10px; 
-  background: #5b595a;
+  background: #f7c59c;
   width: 20px;
   height: 20px;
   padding: 1px;
