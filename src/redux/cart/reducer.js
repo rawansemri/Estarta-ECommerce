@@ -4,49 +4,37 @@ const initState = {
   cartItems: [],
 };
 
-function cartReducer(state = initState, action) {
+export default function cartReducer(state = initState, action) {
   switch (action.type) {
     case CART_CONSTANTS.ADD_TO_CART:
-      const FoundItem = state.cartItems?.find(
-        (item) => item.id === action.payload.id
-      );
-
-      if (FoundItem) {
-        const Edited = state.cartItems.map((item) => {
-          if (item.id === action.payload.id) {
-            return { ...item, quantity: item.quantity + 1 };
-          } else {
-            return item;
-          }
-        });
-
-        return {
-          cartItems: Edited,
-        };
-      } else {
-        return {
-          cartItems: [...state.cartItems, { ...action.payload, quantity: 1 }],
-        };
-      }
-
-    case CART_CONSTANTS.REMOVE_FROM_CART:
-      const Edited = state.cartItems.map((item) => {
-        if (item?.id === action.payload.id) {
-          if (item?.quantity !== 1) {
-            return { ...item, quantity: item?.quantity - 1 };
-          }
+      const itemToAdd = action.payload;
+      const updatedCartItems = state.cartItems.map((item) => {
+        if (item.id === itemToAdd.id) {
+          return { ...item, quantity: item.quantity + 1 };
         } else {
           return item;
         }
       });
 
-      return {
-        cartItems: Edited.filter(Boolean),
-      };
+      if (updatedCartItems.some((item) => item.id === itemToAdd.id)) {
+        return { ...state, cartItems: updatedCartItems };
+      } else {
+        return { ...state, cartItems: [...state.cartItems, { ...itemToAdd, quantity: 1 }] };
+      }
+
+    case CART_CONSTANTS.REMOVE_FROM_CART:
+      const itemToRemove = action.payload;
+      const updatedCartItem = state.cartItems.map((item) => {
+        if (item.id === itemToRemove.id) {
+          return { ...item, quantity: item.quantity - 1 };
+        } else {
+          return item;
+        }
+      });
+
+      return { ...state, cartItems: updatedCartItem.filter((item) => item.quantity > 0) };
 
     default:
       return state;
   }
 }
-
-export default cartReducer;
